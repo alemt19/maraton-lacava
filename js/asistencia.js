@@ -56,5 +56,6 @@ function confirmar_asistencia () {
     localStorage.clear()
     localStorage.setItem("participantes", JSON.stringify(asistentes_confirmados))
     alert("Se ha confirmado exitosamente la asistencia de los participantes.")
+    window.location.href = "caminata.html"
 }
     

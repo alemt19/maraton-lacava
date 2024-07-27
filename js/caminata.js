@@ -41,6 +41,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     localStorage.clear()
     localStorage.setItem("participantes", JSON.stringify(participantes))
+    if (tbody.innerHTML === "") {
+        alert("Primero debe confirmar la asistencia de participantes antes de ver el progreso de la caminata")
+        window.location.href = "asistencia.html"
+    }
 })
 
 function formatear_segundos(s) {
@@ -60,6 +64,35 @@ function calcular_recorrido (acelerador) {
 }
 
 function actualizar_tabla (acelerador) {
+        if (document.getElementById("tiempo-inicio").value === "") {
+            return alert("Debe seleccionar una hora de inicio antes de iniciar.")
+        }
+
+        if (acelerador === 100) {
+            if (confirm("¿Está seguro de iniciar el progreso en tiempo acelerado? Una vez iniciado no podrá cambiar a tiempo acelerado.")) {                   
+                let boton = document.getElementById("btn-real")
+                boton.removeAttribute("onclick")
+                let boton2 = document.getElementById("btn-acel")
+                boton2.removeAttribute("onclick")
+                alert("Iniciando... (Tiempo final será mostrado al finalizar la caminata)")
+            } 
+            else {
+                return alert("Cancelando...")
+            }
+        }
+        else if (acelerador === 1) {
+            if (confirm("¿Está seguro de iniciar el progreso en tiempo real? Una vez iniciado no podrá cambiar a tiempo real.")) {                   
+                let boton = document.getElementById("btn-real")
+                boton.removeAttribute("onclick")
+                let boton2 = document.getElementById("btn-acel")
+                boton2.removeAttribute("onclick")
+                alert("Iniciando... (Tiempo final será mostrado al finalizar la caminata)")
+            } 
+            else {
+                return alert("Cancelando...")
+            }
+        }
+
         let intervalo = setInterval(() => {
         let participantes = JSON.parse(localStorage.getItem("participantes")) || []
         let participantes_actualizados = []
@@ -71,11 +104,6 @@ function actualizar_tabla (acelerador) {
             if (parseInt(participante[7]) < 10000) {
                 participante[6] = String(parseInt(participante[6]) + acelerador)
                 participante[7] = String(parseInt(participante[7]) + calcular_recorrido(acelerador))
-            }
-            else {
-                if (parseInt(participante[5]) === 0) {
-                    participante[5] = String(parseInt(participante[4]) + parseInt(participante[6]))
-                }
             }
         }
         participantes_actualizados = bubbleSort(participantes)
@@ -175,7 +203,6 @@ function actualizar_tabla (acelerador) {
             }
                 alert("Ha finalizado la caminata.")
                 clearInterval(intervalo)
-                localStorage.clear()
         }
     }, 1000)
 }

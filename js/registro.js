@@ -24,7 +24,6 @@ function registrar_participante () {
     nombre.value = ""
     edad.value = ""
     cedula.value = ""
-    municipio.value = ""
     alert("Participante registrado. Si ya no se van a registrar más participantes debe confirmar el registro")
 }
 
@@ -33,7 +32,7 @@ function confirmar_registro () {
         localStorage.clear()
         localStorage.setItem("participantes", JSON.stringify(participantes))
         alert("Se ha guardado el registro de participantes.")
-        window.location.href = "index.html"
+        window.location.href = "asistencia.html"
     }
     else {
         alert("Por favor registre a un participante antes de hacer la confirmación.")
