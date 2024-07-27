@@ -1,4 +1,6 @@
+
 var participantes = JSON.parse(localStorage.getItem("participantes")) || []
+
 console.log(participantes)
 
 const edad = document.getElementById("edad")

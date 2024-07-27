@@ -50,9 +50,11 @@ function confirmar_asistencia () {
         asistente_confirmado.push("0")
         asistente_confirmado.push("0")
         asistente_confirmado.push("0")
+        asistente_confirmado.push("0")
         asistentes_confirmados.push(asistente_confirmado)
     }
     localStorage.clear()
     localStorage.setItem("participantes", JSON.stringify(asistentes_confirmados))
+    alert("Se ha confirmado exitosamente la asistencia de los participantes.")
 }
     
