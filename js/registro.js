@@ -1,8 +1,6 @@
 
 var participantes = JSON.parse(localStorage.getItem("participantes")) || []
 
-console.log(participantes)
-
 const edad = document.getElementById("edad")
 edad.addEventListener("input", function () {
     let edadTxt = edad.value 
@@ -30,9 +28,10 @@ function confirmar_registro () {
     if (participantes.length > 0) {
         localStorage.clear()
         localStorage.setItem("participantes", JSON.stringify(participantes))
-        alert("Se ha guardado el registro de participantes")
+        alert("Se ha guardado el registro de participantes.")
+        window.location.href = "index.html"
     }
     else {
-        alert("Por favor registre a un participante antes de hacer la confirmación")
+        alert("Por favor registre a un participante antes de hacer la confirmación.")
     }
 }

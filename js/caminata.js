@@ -130,48 +130,49 @@ function actualizar_tabla (acelerador) {
         }
 
         if (cont2 === participantes_actualizados.length) {
-        localStorage.clear()
-        localStorage.setItem("participantes", JSON.stringify(participantes_actualizados))
-        let tbody = document.getElementById("tbody")
-        tbody.innerHTML = ""
-        let cont = 1
-        for (let participante of participantes_actualizados) {
-            let tr = document.createElement("tr")
-            tr.className = "participantes"
-    
-            let puesto = document.createElement("td")
-            puesto.innerHTML = cont
-            let nombre = document.createElement("td")
-            nombre.innerHTML = participante[0]
-            let edad = document.createElement("td")
-            edad.innerHTML = participante[1]
-            let cedula = document.createElement("td")
-            cedula.innerHTML = participante[2]
-            let municipio = document.createElement("td")
-            municipio.innerHTML = participante[3]
-            let inicio = document.createElement("td")
-            inicio.innerHTML = formatear_segundos(participante[4])
-            let fin = document.createElement("td")
-            fin.innerHTML = formatear_segundos(participante[5])
-            let tiempo = document.createElement("td")
-            tiempo.innerHTML = formatear_segundos(participante[6])
-            let recorrido = document.createElement("td")
-            recorrido.innerHTML = `${redondearA2Decimales(parseInt(participante[7])/1000)}Km`
-    
-            tr.appendChild(puesto)
-            tr.appendChild(nombre)
-            tr.appendChild(edad)
-            tr.appendChild(cedula)
-            tr.appendChild(municipio)
-            tr.appendChild(inicio)
-            tr.appendChild(fin)
-            tr.appendChild(tiempo)
-            tr.appendChild(recorrido)
-            tbody.append(tr)
-            cont += 1
-        }
-            alert("Ha finalizado la caminata.")
-            clearInterval(intervalo)
+            localStorage.clear()
+            localStorage.setItem("participantes", JSON.stringify(participantes_actualizados))
+            let tbody = document.getElementById("tbody")
+            tbody.innerHTML = ""
+            let cont = 1
+            for (let participante of participantes_actualizados) {
+                let tr = document.createElement("tr")
+                tr.className = "participantes"
+        
+                let puesto = document.createElement("td")
+                puesto.innerHTML = cont
+                let nombre = document.createElement("td")
+                nombre.innerHTML = participante[0]
+                let edad = document.createElement("td")
+                edad.innerHTML = participante[1]
+                let cedula = document.createElement("td")
+                cedula.innerHTML = participante[2]
+                let municipio = document.createElement("td")
+                municipio.innerHTML = participante[3]
+                let inicio = document.createElement("td")
+                inicio.innerHTML = formatear_segundos(participante[4])
+                let fin = document.createElement("td")
+                fin.innerHTML = formatear_segundos(participante[5])
+                let tiempo = document.createElement("td")
+                tiempo.innerHTML = formatear_segundos(participante[6])
+                let recorrido = document.createElement("td")
+                recorrido.innerHTML = `${redondearA2Decimales(parseInt(participante[7])/1000)}Km`
+        
+                tr.appendChild(puesto)
+                tr.appendChild(nombre)
+                tr.appendChild(edad)
+                tr.appendChild(cedula)
+                tr.appendChild(municipio)
+                tr.appendChild(inicio)
+                tr.appendChild(fin)
+                tr.appendChild(tiempo)
+                tr.appendChild(recorrido)
+                tbody.append(tr)
+                cont += 1
+            }
+                alert("Ha finalizado la caminata.")
+                clearInterval(intervalo)
+                localStorage.clear()
         }
     }, 1000)
 }
