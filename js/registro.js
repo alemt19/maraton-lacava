@@ -21,6 +21,10 @@ function registrar_participante () {
     }
 
     participantes.push([nombre.value, edad.value, cedula.value, municipio.value, "0", "0", "0"])
+    nombre.value = ""
+    edad.value = ""
+    cedula.value = ""
+    municipio.value = ""
     alert("Participante registrado. Si ya no se van a registrar más participantes debe confirmar el registro")
 }
 

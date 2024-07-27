@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tbody.innerHTML = ""
     let cont = 1
     for (let participante of participantes) {
-        participante[4] = obtenerHoraActual()
-
         let tr = document.createElement("tr")
         tr.className = "participantes"
 
@@ -65,6 +63,10 @@ function actualizar_tabla (acelerador) {
         let intervalo = setInterval(() => {
         let participantes = JSON.parse(localStorage.getItem("participantes")) || []
         let participantes_actualizados = []
+        let tiempo_inicio = document.getElementById("tiempo-inicio").value.split(":")
+        console.log(document.getElementById("tiempo-inicio").value.split(":"))
+        let tiempo_segundos = (parseInt(tiempo_inicio[0]) * 3600) + (parseInt(tiempo_inicio[1]) * 60)
+        console.log(tiempo_segundos)
         for (let participante of participantes) {
             if (parseInt(participante[7]) < 10000) {
                 participante[6] = String(parseInt(participante[6]) + acelerador)
@@ -86,6 +88,7 @@ function actualizar_tabla (acelerador) {
         for (let participante of participantes_actualizados) {
             let tr = document.createElement("tr")
             tr.className = "participantes"
+            participante[4] = tiempo_segundos
     
             let puesto = document.createElement("td")
             puesto.innerHTML = cont
