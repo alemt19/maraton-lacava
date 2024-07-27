@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Maratón</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/upper-bar.css">
+    <link rel="stylesheet" type="text/css" href="assets/AntonSC.ttf">
+    <link rel="stylesheet" type="text/css" href="assets/Poppins-Regular.ttf">
+</head>
+<body>
+    <div id="upper-bar">
+        <div class="bar-divs" id="logo">
+            <img src="assets/murcielago-removebg-preview.png" alt="murcielago" id="img-murg">
+            <p id="p-upper-bar">LACAVA <br> MARATÓN</p>
+        </div>
+        <div class="bar-divs">
+            <a href="registro.html" class="link-upper-bar">Registrarse</a>
+            <a href="asistencia.html" class="link-upper-bar">Asistencia</a>
+            <a href="caminata.html" class="link-upper-bar">Caminata</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Registro para Maratón</h1>
+        <div id="main-content">
+            <div id="form-div">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Alfredo Monagas" required>
+                <label for="edad">Edad:</label>
+                <input type="number" min="12" max="100" placeholder="18" id="edad" required>
+                <label for="cedula">Cédula:</label>
+                <input type="number" id="cedula" placeholder="30948291" required>
+                <label for="municipio">Municipio:</label>
+                <select name="municipio" id="municipio" required>
+                    <option value="Valencia">Valencia</option>
+                    <option value="Puerto Cabello">Puerto Cabello</option>
+                    <option value="San Diego">San Diego</option>
+                    <option value="Los Guayos">Los Guayos</option>
+                    <option value="Naguanagua">Naguanagua</option>
+                    <option value="San Joaquín">San Joaquín</option>
+                    <option value="Guacara">Guacara</option>
+                    <option value="Montalbán">Montalbán</option>
+                    <option value="Tocuyito">Tocuyito</option>
+                    <option value="Bejuma">Bejuma</option>
+                    <option value="Mariara">Mariara</option>
+                    <option value="Miranda">Miranda</option>
+                    <option value="Campo de Carabobo">Campo de Carabobo</option>
+                    <option value="Güigüe">Güigüe</option>
+                </select>
+            </div>
+            <form id="registrationForm">
+                <button type="button" onclick="registrar_participante()">Registrar Participante</button>
+    
+                <button type="button" onclick="confirmar_registro()">Guardar</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/registro.js"></script>
+</body>
+</html>

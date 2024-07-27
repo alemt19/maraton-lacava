@@ -1,0 +1,21 @@
+.participantes:hover {
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    transform: scale(105%);
+    background-color: #3fec5c;
+    z-index: 100;
+    position: relative;
+}
+
+.clicked {
+    transition: 0.4s ease-in-out;
+    background-color: #3fbbec;
+}
+
+.participantes {
+    background-color: white;
+}
+
+table {
+    background-color: white;
+}

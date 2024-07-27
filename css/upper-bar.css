@@ -1,0 +1,60 @@
+
+#upper-bar {
+    height: 14vh;
+    width: 99vw;
+    background-color: #720626;
+    color: #DEEC3F;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: space-between;
+    box-shadow: 0 0 10px 0 black;
+  }
+  
+  #img-murg {
+    padding-left: 0.5vw;
+    width: 10vw;
+    height: 12vh;
+    transition: 0.4s ease-in-out;
+  }
+  
+  #img-murg:hover {
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    transform: scale(120%);
+  }
+  
+  @font-face {
+    font-family: 'AntonSC';
+    src: url('../assets/AntonSC.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../assets/Poppins-Regular.ttf') format('truetype');
+  }
+  
+  #p-upper-bar{
+    font-family: AntonSC, monospace;
+    font-size: 5vh;
+    line-height: 1.1;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+  }
+  
+  .link-upper-bar {
+    margin-right: 3vw;
+    text-decoration: none;
+    color: white;
+    font-size: 3.5vh;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  
+  .bar-divs {
+    display: flex;
+    align-items: center;
+  }
+  

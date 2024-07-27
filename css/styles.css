@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #111;
+  font-family: AntonSC, monospace;
+  font-weight: 400;
+}
+
+.container {
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  align-items: center;
+}
+
+
+#main-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #720626;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 7px 7px 30px 0 black;
+  width: 50vw;
+  height: 60vh;
+}
+
+#form-div {
+  width: 80%;
+  margin: 1%;
+  padding: 5px;
+  height: 40vh;
+}
+
+#table-div {
+  width: 80%;
+  margin: 1%;
+  margin-top: 4%;
+  overflow-y: auto;
+  height: 40vh;
+  display: flex;
+  
+}
+
+#registrationForm {
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+button {
+  width: 20vw;
+  min-width: 20vw;
+  padding: 10px;
+  background-color: #DEEC3F;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+  font-family: AntonSC, monospace;
+  font-size: 3vh;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  font-weight: 300;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #3fec5c;
+  transform: scale(110%);
+
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid #111;
+  overflow: hidden;
+}
+
+.participantes {
+  transition: 0.4s ease-in-out;
+  background-color: white;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  word-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  font-family: Poppins, sans-serif;
+  font-size: 2.5vh;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+td {
+  max-width: 10vw;
+  border-top: 2px solid #111;
+}
+
+th {
+  background-color: #DEEC3F;
+  color: black;
+}
+
+@font-face {
+  font-family: 'AntonSC';
+  src: url('../assets/AntonSC.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/Poppins-Regular.ttf') format('truetype');
+}
+
+
+label {
+  font-family: Poppins, sans-serif;
+  font-size: 3vh;
+  line-height: 1.1;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: black;
+  margin: 0.5vh;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin: 0.5vh;
+}
